@@ -6,4 +6,3 @@ class Server:
     id: str
     name: str
     running: bool
-

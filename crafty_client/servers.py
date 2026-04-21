@@ -12,12 +12,12 @@ class ServersAPI:
 
         for item in data:
             servers.append(
-                    Server(
-                        id=str(item["server_id"]),
-                        name=item["server_name"],
-                        running=item.get("running", False)
-                        )
-                    )
+                Server(
+                    id=str(item["server_id"]),
+                    name=item["server_name"],
+                    running=item.get("running", False)
+                )
+            )
 
         return servers
     
@@ -47,6 +47,3 @@ class ServersAPI:
 
     async def cmd(self, server_id: str, command: str):
         await self._client._request("POST", f"/api/v2/servers/{server_id}/stdin", data=command)
-
-
-

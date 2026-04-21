@@ -1,4 +1,3 @@
-
 class CraftyError(Exception):
     pass
 
@@ -17,4 +16,3 @@ class CraftyNotFoundError(CraftyError):
 
 class CraftyNetworkError(CraftyError):
     pass
-

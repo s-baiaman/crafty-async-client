@@ -1,12 +1,11 @@
 import aiohttp
-import asyncio
 
 from .exceptions import (
         CraftyAuthError,
         CraftyPermissionError,
         CraftyNotFoundError,
         CraftyNetworkError
-        )
+)
 
 from .servers import ServersAPI
 
