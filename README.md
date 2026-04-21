@@ -7,7 +7,7 @@ A lightweight and modern async wrapper for managing Minecraft servers via Crafty
 ---
 
 [![Python](https://img.shields.io/badge/python-%3E%3D3.10-3776AB?logo=python&logoColor=white)](#)
-[![GitHub Stars](https://img.shields.io/github/stars/s-baiaman/crafty-async-client?style=flat&color=FFD700&logo=starship&logoColor=white)](https://github.com/s-baiaman/crafty-async-client)
+[![GitHub Stars](https://img.shields.io/github/stars/s-baiaman/crafty-async-client?style=flat&logo=github&label=stars&color=yellow)](https://github.com/s-baiaman/crafty-async-client)
 [![GitHub License](https://img.shields.io/github/license/henriquesebastiao/badges?style=flat&color=22c55e)](https://github.com/s-baiaman/crafty-async-client/blob/main/LICENSE)
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fs-baiaman%2Fcrafty-async-client&label=visitors&countColor=%230c7ebe&style=flat&labelStyle=none)
 
