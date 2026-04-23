@@ -44,12 +44,7 @@ class CraftyClient:
         headers = {"Authorization": f"Bearer {self._api_token}"}
 
         try:
-            async with self._session.request(method, url, headers=headers, json=json, data=data, params=params, ssl=False) as response:
-
-                if response.status >= 400:
-                    text = await response.text()
-                    raise Exception(f"HTTP {response.status}: {text}")
-
+            async with self._session.request(method, url, headers=headers, json=json, data=data, params=params, ssl=self._ssl) as response:
                 if response.status == 401:
                     raise CraftyAuthError("Invalid API token")
 
@@ -59,11 +54,13 @@ class CraftyClient:
                 if response.status == 404:
                     raise CraftyNotFoundError("Not found")
 
-                data = await response.json()
+                if response.status >= 400:
+                    text = await response.text()
+                    raise Exception(f"HTTP {response.status}: {text}")
 
-                return data.get("data")
+                payload = await response.json()
+
+                return payload.get("data")
 
         except aiohttp.ClientError as e:
             raise CraftyNetworkError(str(e))
-
-
