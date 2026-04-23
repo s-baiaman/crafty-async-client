@@ -63,4 +63,4 @@ class CraftyClient:
                 return payload.get("data")
 
         except aiohttp.ClientError as e:
-            raise CraftyNetworkError(str(e))
+            raise CraftyNetworkError(str(e)) from e
