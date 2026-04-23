@@ -20,8 +20,9 @@ class CraftyClient:
         self._session: aiohttp.ClientSession | None = None
         self.servers = ServersAPI(self)
 
-    async def connect(self):
-        self._session = aiohttp.ClientSession(timeout=self._timeout)
+    async def connect(self) -> None:
+        if self._session is None or self._session.closed:
+            self._session = aiohttp.ClientSession(timeout=self._timeout)
 
     async def close(self):
         if self._session:
